@@ -1,0 +1,10 @@
+2026/10/21 16:57:44 [error] 8572#2028: *7 CreateFile() "./html/maoyan/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2026/10/21 22:28:34 [alert] 21040#1540: worker process 21444 exited with code C0000142
+2026/10/21 22:28:34 [alert] 21040#1540: could not respawn worker
+2026/10/22 15:31:58 [error] 20336#20016: *1 CreateFile() "C:\AAA_data\practise\maoyan\nginx-1.18.0/html/maoyan/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2026/10/22 16:10:57 [notice] 14576#4696: signal process started
+2026/10/22 16:55:11 [notice] 12588#26812: signal process started
+2026/10/22 17:22:30 [error] 17716#3884: *77 CreateFile() "C:\AAA_data\practise\maoyan\nginx-1.18.0/html/maoyan/movies.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /movies.html HTTP/1.1", host: "127.0.0.1:8080"
+2026/10/22 17:26:12 [error] 17716#3884: *88 CreateFile() "C:\AAA_data\practise\maoyan\nginx-1.18.0/html/maoyan/movies.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /movies.html HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/index.html"
+2026/10/22 17:26:30 [error] 17716#3884: *88 CreateFile() "C:\AAA_data\practise\maoyan\nginx-1.18.0/html/maoyan/movies.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /movies.html HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/mine.html"
+2026/10/22 17:45:28 [notice] 11544#20336: signal process started

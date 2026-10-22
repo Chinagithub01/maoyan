@@ -35,5 +35,8 @@ build/
 ### VS Code ###
 .vscode/
 
+### 本地环境配置，含数据库和云账号密钥 ###
+**/application-dev.yml
+
 ### Mac OS ###
 .DS_Store

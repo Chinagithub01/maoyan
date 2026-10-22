@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>猫眼演出</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <select class="city-select" v-model="cityId" aria-label="城市">
+          <option v-for="city in cities" :key="city.id" :value="String(city.id)">{{ city.name }}</option>
+        </select>
+        <span v-if="cityError" class="empty">{{ cityError }}</span>
+        <div class="topbar-links">
+          <template v-if="session">
+            <span class="nick">{{ nickname }}</span>
+            <button type="button" class="linkish" @click="logout">退出</button>
+          </template>
+          <template v-else>
+            <a href="login.html">登录</a>
+            <a href="login.html?tab=register">注册</a>
+          </template>
+        </div>
+      </div>
+    </div>
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a class="brand" href="index.html"><span class="logo-mark">猫</span><span>猫眼演出</span></a>
+        <nav class="nav">
+          <a class="active" href="index.html">首页</a>
+          <a href="mine.html">我的</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <section class="container block">
+        <div class="block-head"><h2>演出类型</h2></div>
+        <p v-if="typeError" class="empty">{{ typeError }}</p>
+        <p v-else-if="loadingTypes" class="meta">正在加载演出类型</p>
+        <p v-else-if="!types.length" class="empty">暂无演出类型</p>
+        <div v-else class="type-row">
+          <div class="type-card" v-for="type in types" :key="type.id">
+            <strong>{{ type.name }}</strong>
+          </div>
+        </div>
+      </section>
+      <section class="container block">
+        <div class="block-head"><h2>热卖演出</h2></div>
+        <p v-if="showError" class="empty">{{ showError }}</p>
+        <p v-else-if="loadingShows" class="meta">正在加载热卖演出</p>
+        <p v-else-if="!shows.length" class="empty">暂无热卖演出</p>
+        <div v-else class="movie-grid">
+          <article class="movie-card" v-for="show in shows" :key="show.id">
+            <img v-if="show.poster" class="show-cover" :src="show.poster" :alt="show.name">
+            <div class="movie-body">
+              <h3>{{ show.name }}</h3>
+              <p class="meta">{{ show.showTypeName }} / {{ show.cityName }}</p>
+              <p class="meta">{{ show.artist ? show.artist + " / " : "" }}{{ show.venueName }}</p>
+              <span class="wish">已售 {{ Number(show.soldCount || 0) }} 张</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>猫眼演出</p>
+        <p>演出、城市和类型来自数据库。</p>
+      </div>
+    </footer>
+  </div>
+  <script src="js/vue.global.prod.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

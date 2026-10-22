@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: maoyan-admin
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: ${maoyan.datasource.driver-class-name}
+    url: "jdbc:mysql://${maoyan.datasource.host}:${maoyan.datasource.port}/${maoyan.datasource.database}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true"
+    username: ${maoyan.datasource.username}
+    password: ${maoyan.datasource.password}
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB

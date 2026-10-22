@@ -1,0 +1,33 @@
+server:
+  port: 9081
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: maoyan
+  datasource:
+    driver-class-name: ${maoyan.datasource.driver-class-name}
+    url: "jdbc:mysql://${maoyan.datasource.host}:${maoyan.datasource.port}/${maoyan.datasource.database}?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true"
+    username: ${maoyan.datasource.username}
+    password: ${maoyan.datasource.password}
+  redis:
+    host: ${maoyan.redis.host}
+    port: ${maoyan.redis.port}
+    password: ${maoyan.redis.password}
+    database: ${maoyan.redis.database}
+
+mybatis-plus:
+  type-aliases-package: com.maoyan.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+maoyan:
+  alioss:
+    endpoint: ${maoyan.alioss.endpoint}
+    access-key-id: ${maoyan.alioss.access-key-id}
+    access-key-secret: ${maoyan.alioss.access-key-secret}
+    bucket-name: ${maoyan.alioss.bucket-name}

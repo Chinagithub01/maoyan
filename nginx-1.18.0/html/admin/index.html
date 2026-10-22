@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>猫眼演出管理端</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <section id="login-view" class="login-view">
+    <form id="login-form" class="login-card">
+      <p class="brand">猫眼演出</p>
+      <h1>管理端登录</h1>
+      <label>用户名<input id="login-username" name="username" autocomplete="username" required></label>
+      <label>密码<input id="login-password" name="password" type="password" autocomplete="current-password" required></label>
+      <p id="login-error" class="error"></p>
+      <button type="submit">登录</button>
+    </form>
+  </section>
+
+  <div id="console-view" class="console hidden">
+    <aside class="sider">
+      <p class="brand">猫眼演出</p>
+      <p class="sider-label">运营控制台</p>
+      <button type="button" data-panel="show-type" class="nav-btn active">演出类型</button>
+      <button type="button" data-panel="show" class="nav-btn">演出</button>
+    </aside>
+    <div class="main">
+      <header class="top">
+        <h1 id="panel-title">演出类型</h1>
+        <div class="top-actions">
+          <span id="admin-name"></span>
+          <button type="button" id="logout-btn" class="ghost">退出</button>
+        </div>
+      </header>
+      <section id="panel-show-type" class="panel">
+        <div class="toolbar">
+          <button type="button" id="add-type">新增类型</button>
+          <p id="type-error" class="error"></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>编号</th><th>名称</th><th>操作</th></tr></thead>
+            <tbody id="type-body"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="panel-show" class="panel hidden">
+        <div class="toolbar">
+          <button type="button" id="add-show">新增演出</button>
+          <p id="show-error" class="error"></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>编号</th><th>名称</th><th>类型</th><th>城市</th><th>场馆</th><th>停售</th><th>操作</th></tr>
+            </thead>
+            <tbody id="show-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <dialog id="editor">
+    <form id="editor-form" method="dialog">
+      <h2 id="editor-title"></h2>
+      <div id="editor-fields"></div>
+      <p id="editor-error" class="error"></p>
+      <div class="dialog-actions">
+        <button type="button" id="editor-cancel" class="ghost">取消</button>
+        <button type="submit" value="ok">保存</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="js/admin.js"></script>
+</body>
+</html>
